@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RAIDION_127</title>
+<meta name="description" content="RAIDION_127 — блогер и создатель контента по Roblox.">
+<style>
+  :root{
+    --bg-dark:#06070a;
+    --neon:#37ff8b;
+    --muted:#cfd7d1;
+    --text:#f5f7f6;
+    --btn-radius:22px;
+    --container-max:980px;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family:Arial,system-ui,"Segoe UI",sans-serif;
+    background:
+      radial-gradient(1200px 600px at 10% 10%, rgba(55,255,139,0.04), transparent 8%),
+      radial-gradient(800px 400px at 90% 90%, rgba(255,85,145,0.02), transparent 8%),
+      var(--bg-dark);
+    color:var(--text);
+    -webkit-font-smoothing:antialiased;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:28px;
+    text-align:center;
+  }
+
+  .screen{
+    width:min(var(--container-max),96%);
+    padding:28px;
+    border-radius:18px;
+    position:relative;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,0.03);
+    box-shadow:0 10px 40px rgba(2,8,6,0.6), 0 0 40px rgba(55,255,139,0.03);
+    background:linear-gradient(180deg, rgba(245,241,233,0.02), rgba(245,241,233,0.01));
+    backdrop-filter:blur(6px);
+  }
+
+  .screen::before{
+    content:"";
+    position:absolute; inset:-2px; border-radius:20px; padding:2px;
+    background:linear-gradient(90deg, rgba(55,255,139,0.28), rgba(15,255,240,0.12), rgba(255,85,145,0.14));
+    filter:blur(10px) saturate(1.2);
+    mix-blend-mode:screen; pointer-events:none; opacity:.95;
+    animation:glow 3.8s ease-in-out infinite;
+  }
+  @keyframes glow{0%{transform:translateY(0)}50%{transform:translateY(-4px)}100%{transform:translateY(0)}}
+
+  .screen::after{
+    content:"";
+    position:absolute; inset:0;
+    background:repeating-linear-gradient(180deg, rgba(255,255,255,0.015) 0 1px, transparent 1px 6px);
+    opacity:.35; mix-blend-mode:overlay; pointer-events:none;
+  }
+
+  .container{ padding:8px 20px; }
+
+  .top-row{ display:flex; gap:20px; align-items:center; justify-content:center; flex-wrap:wrap; }
+
+  .left{ flex:0 0 auto; display:flex; align-items:center; justify-content:center; min-width:140px; }
+  .right{ flex:1 1 420px; text-align:left; min-width:220px; }
+
+  /* Avatar: use the provided image file (avatar.jpg) - circular, cover and neon glow */
+  .avatar{
+    width:180px; height:180px;
+    border-radius:50%;
+    object-fit:cover;
+    display:block;
+    border:6px solid rgba(19,54,23,0.95);
+    box-shadow:
+      0 8px 30px rgba(2,8,6,0.6),
+      0 0 28px rgba(55,255,139,0.12);
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
+  }
+
+  .name{
+    font-size:clamp(28px,5.2vw,55px);
+    font-weight:900;
+    color:var(--neon);
+    margin-top:8px;
+    line-height:1;
+    text-shadow:0 0 12px rgba(55,255,139,0.25);
+  }
+
+  .about{
+    font-size:clamp(15px,2vw,20px);
+    color:var(--muted);
+    margin-top:12px;
+    line-height:1.45;
+    padding:0 6px;
+  }
+
+  .btn{
+    display:block;
+    width:90%; max-width:800px;
+    margin:14px auto; padding:18px;
+    border-radius:var(--btn-radius);
+    font-size:clamp(16px,2vw,22px);
+    font-weight:700; color:#fff; text-decoration:none; text-align:center;
+    box-shadow:0 8px 26px rgba(2,8,6,0.6);
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .btn:hover{ transform:translateY(-3px); filter:brightness(1.03); }
+
+  .play{ background:#d60000; }
+  .youtube{ background:linear-gradient(90deg,#ff0000,#ff5757); }
+  .telegram{ background:#68a9db; color:#053046; font-weight:800; }
+  .likee{ background:linear-gradient(90deg,#ff0050,#ff8a00); }
+
+  @media (max-width:720px){ .right, .about{ text-align:center } }
+  @media (max-width:420px){ .avatar{ width:140px; height:140px } .btn{ padding:14px } .screen{ padding:18px } }
+  @media (prefers-reduced-motion:reduce){ .screen::before, .btn{ animation:none; transition:none } }
+</style>
+</head>
+<body>
+  <main class="screen" role="main" aria-label="Профиль RAIDION_127">
+    <div class="container">
+      <div class="top-row">
+        <div class="left">
+          <!-- Сохраните Image 1 как avatar.jpg в той же папке -->
+          <img src="avatar.jpg" alt="Аватар RAIDION_127" class="avatar" width="756" height="756">
+        </div>
+
+        <div class="right">
+          <h1 class="name">RAIDION_127</h1>
+
+          <div class="about" aria-live="polite">
+            — блогер, роблоксер и создатель контента по Roblox 🎮<br><br>
+            Снимаю видео, играю с подписчиками, публикую ролики в YouTube, Likee и Telegram. Подписывайся и заходи играть вместе со мной!
+          </div>
+        </div>
+      </div>
+
+      <nav aria-label="Социальные ссылки" style="margin-top:18px;">
+        <a class="btn play" href="https://www.roblox.com/users/5218328447/profile" target="_blank" rel="noopener noreferrer" aria-label="Играть с RAIDION_127 на Roblox">🎮 ПОИГРАТЬ СО МНОЙ</a>
+
+        <a class="btn youtube" href="https://youtube.com/@raidion1283?si=Lj6nSK6Zn_FndKLh" target="_blank" rel="noopener noreferrer" aria-label="Канал RAIDION_127 на YouTube">▶️ YOUTUBE</a>
+
+        <a class="btn telegram" href="https://t.me/raidion127" target="_blank" rel="noopener noreferrer" aria-label="Написать в Telegram RAIDION_127">💬 ТЕЛЕГРАМ</a>
+
+        <a class="btn likee" href="https://l.likee.video/p/gK56l4" target="_blank" rel="noopener noreferrer" aria-label="Профиль RAIDION_127 на Likee">❤️ LIKEE</a>
+      </nav>
+    </div>
+  </main>
+</body>
+</html>
